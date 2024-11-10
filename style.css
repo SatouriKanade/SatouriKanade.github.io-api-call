@@ -3,6 +3,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("api\download (3).jpg");  /* Use your background image */
+    background-size: cover;
+    background-repeat: repeat-x;  /* Repeat horizontally */
+    animation: moveBackground 20s linear infinite;  /* Apply animation */
     background: linear-gradient(135deg, #5cdcfc, #5bcfec);
     height: 100vh;
     margin: 0;
@@ -106,4 +110,6 @@ button:hover {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
 }
