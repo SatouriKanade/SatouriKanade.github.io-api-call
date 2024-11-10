@@ -2,7 +2,7 @@ const charizardContainer = document.getElementById('charizard-container');
 const loadButton = document.getElementById('load-pokemon');
 const pokemonNameInput = document.getElementById('pokemon-name');
 
-// Function to fetch data from the PokéAPI
+
 async function fetchPokemonData(pokemonName) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
@@ -17,7 +17,7 @@ async function fetchPokemonData(pokemonName) {
     }
 }
 
-// Function to display Pokémon data in HTML
+
 function displayPokemonData(data) {
     charizardContainer.innerHTML = `
         <h2 class="text-xl font-semibold text-[#47daff]">${data.name.toUpperCase()}</h2>
@@ -38,7 +38,7 @@ function displayPokemonData(data) {
 }
 
 
-// Event listener to load Pokémon when button is clicked
+
 loadButton.addEventListener('click', () => {
     const pokemonName = pokemonNameInput.value;
     if (pokemonName) {
@@ -50,7 +50,7 @@ loadButton.addEventListener('click', () => {
 
 async function fetchPokemonData(pokemonName) {
     document.getElementById('loading').style.display = 'block';
-    charizardContainer.innerHTML = '';  // Clear previous data
+    charizardContainer.innerHTML = '';  
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
         if (!response.ok) throw new Error(`Error: ${response.status}`);
@@ -80,3 +80,26 @@ async function fetchPokemonData(pokemonName) {
         document.getElementById('loading').style.display = 'none';
     }
 }
+
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 20 },
+        "shape": {
+            "type": "image",
+            "image": {
+                "src": "charizard.png",  
+                "width": 20,
+                "height": 20
+            }
+        },
+        "move": {
+            "speed": 2,
+            "out_mode": "bounce"
+        }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": { "enable": true, "mode": "repulse" }
+        }
+    }
+});
